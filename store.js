@@ -14,7 +14,7 @@ let state = reactive({
 });
 
 let getState = () => computed(() => state);
-let setState = (value) => {
-  state = { ...state, ...value };
+let setState = (property, value) => {
+  state[property] = value;
 };
 export default () => withState({ getState, setState }, state);

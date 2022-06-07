@@ -4,8 +4,8 @@
   >
     <div>Island App</div>
     <div>Dear {{ name }} welcome to our island</div>
-    <input v-model="username" type="text" />
-    <button @click="setState({ name: 'Natasha' })">Save</button>
+    <input v-model="state.name" type="text" />
+    <button @click="setState('name', state.name)">Save</button>
   </div>
 </template>
 
@@ -15,7 +15,9 @@ export default {
   name: "Island",
   data() {
     return {
-      username: "change username",
+      state: {
+        name: "",
+      },
     };
   },
   setup() {
