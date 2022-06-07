@@ -4,7 +4,10 @@
     <div>
       Alpha team will move to rescue {{ name }} with username: {{ username }}
     </div>
-    <input v-model="state.username" type="text" />
+    <label for="username">
+      Username
+      <input v-model="state.username" type="text" placeholder="username" />
+    </label>
     <button @click="setState('username', state.username)">Save</button>
   </div>
 </template>

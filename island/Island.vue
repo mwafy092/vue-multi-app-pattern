@@ -4,7 +4,10 @@
   >
     <div>Island App</div>
     <div>Dear {{ name }} welcome to our island</div>
-    <input v-model="state.name" type="text" />
+    <label for="name">
+      Name
+      <input v-model="state.name" type="text" placeholder="name" />
+    </label>
     <button @click="setState('name', state.name)">Save</button>
   </div>
 </template>
