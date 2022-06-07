@@ -4,6 +4,8 @@
     <div>
       Alpha team will move to rescue {{ name }} with username: {{ username }}
     </div>
+    <input v-model="state.username" type="text" />
+    <button @click="setState('username', state.username)">Save</button>
   </div>
 </template>
 
@@ -11,9 +13,15 @@
 import store from "../store";
 export default {
   name: "Alpha",
+  data() {
+    return {
+      state: {
+        username: "",
+      },
+    };
+  },
   setup() {
     const storeData = store();
-    console.log(storeData.getState().value);
     return storeData;
   },
 };
