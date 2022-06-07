@@ -1,5 +1,13 @@
 <template>
-  <div style="margin: 40px; background-color: red; padding: 20px; color: #fff">
+  <div
+    style="
+      margin: 40px;
+      background-color: red;
+      padding: 20px;
+      color: #fff;
+      border-radius: 5px;
+    "
+  >
     <div>Alpha App</div>
     <div>
       Alpha team will move to rescue {{ name }} with username: {{ username }}

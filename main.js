@@ -4,6 +4,7 @@ import Alpha from "./alpha/Alpha.vue";
 import Island from "./island/Island.vue";
 
 const apps = [Delta, Alpha, Island];
+
 apps.map((app) => {
   const hook = document.createElement("div");
   hook.setAttribute("id", `${app.name.toLowerCase()}`);

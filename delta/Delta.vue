@@ -1,6 +1,12 @@
 <template>
   <div
-    style="margin: 40px; background-color: green; padding: 20px; color: #fff"
+    style="
+      margin: 40px;
+      background-color: green;
+      padding: 20px;
+      color: #fff;
+      border-radius: 5px;
+    "
   >
     <div>Delta App</div>
     <div>

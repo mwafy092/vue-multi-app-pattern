@@ -1,6 +1,12 @@
 <template>
   <div
-    style="margin: 40px; background-color: purple; padding: 20px; color: #fff"
+    style="
+      margin: 40px;
+      background-color: purple;
+      padding: 20px;
+      color: #fff;
+      border-radius: 5px;
+    "
   >
     <div>Island App</div>
     <div>Dear {{ name }} welcome to our island</div>
