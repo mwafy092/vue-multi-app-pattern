@@ -1,21 +1,20 @@
-let store = { message: "store proxy", code: 234 };
+import { reactive } from "vue";
+import { computed } from "vue";
+export const withState = (target, state) => {
+  Object.keys(state).forEach((prop) => {
+    target[prop] = computed(() => state[prop]);
+  });
+  return target;
+};
 
-let storeProxy = new Proxy(store, {
-  get: (o, property) => {
-    return property in o ? o[property] : o;
-  },
-  set: (o, property, value) => {
-    console.log(value);
-  },
+let state = reactive({
+  name: "John Doe",
+  email: "fake@email.com",
+  username: "jd123",
 });
 
-let getStore = async () => {
-  const getData = await storeProxy.get;
-  return getData;
+let getState = () => computed(() => state);
+let setState = (value) => {
+  state = { ...state, ...value };
 };
-
-let setStore = async (property, value) => {
-  storeProxy.set[property] = await value;
-};
-
-export { getStore, setStore };
+export default () => withState({ getState, setState }, state);

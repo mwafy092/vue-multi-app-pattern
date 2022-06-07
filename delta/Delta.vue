@@ -1,14 +1,27 @@
 <template>
-  <div>Delta App</div>
+  <div
+    style="margin: 40px; background-color: green; padding: 20px; color: #fff"
+  >
+    <div>Delta App</div>
+    <div>
+      <ul>
+        <li>Name: {{ name }}</li>
+        <li>Email: {{ email }}</li>
+        <li>username: {{ username }}</li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
-import { getStore } from "../store";
-console.log(getStore().then((data) => console.log(data)));
+import store from "../store";
 
 export default {
   name: "Delta",
 
-  mounted() {},
+  setup() {
+    const storeData = store();
+    return storeData;
+  },
 };
 </script>
