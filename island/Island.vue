@@ -3,12 +3,18 @@
 </template>
 
 <script>
+import { setStore } from "../store";
 export default {
   name: "Island",
   data() {
     return {
-      missionName: "Dark Knight",
+      publicData: {
+        message: "store is nice.",
+      },
     };
+  },
+  mounted() {
+    setStore(this.publicData);
   },
 };
 </script>
