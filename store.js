@@ -1,10 +1,21 @@
-let store = {};
-let proxy = new Proxy(store, {});
+let store = { message: "store proxy", code: 234 };
 
-let setStore = (data) => {
-  proxy.store = { ...proxy.store, data };
+let storeProxy = new Proxy(store, {
+  get: (o, property) => {
+    return property in o ? o[property] : o;
+  },
+  set: (o, property, value) => {
+    console.log(value);
+  },
+});
+
+let getStore = async () => {
+  const getData = await storeProxy.get;
+  return getData;
 };
 
-let getStore = () => proxy.store;
+let setStore = async (property, value) => {
+  storeProxy.set[property] = await value;
+};
 
-export { setStore, getStore };
+export { getStore, setStore };

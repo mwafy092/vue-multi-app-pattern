@@ -3,18 +3,17 @@
 </template>
 
 <script>
-import { setStore } from "../store";
+import { getStore, setStore } from "../store";
+setStore("message", "proxy is nice!!");
 export default {
   name: "Island",
   data() {
     return {
       publicData: {
-        message: "store is nice.",
+        message: "store is nice!",
       },
     };
   },
-  mounted() {
-    setStore(this.publicData);
-  },
+  mounted() {},
 };
 </script>

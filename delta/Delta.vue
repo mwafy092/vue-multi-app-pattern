@@ -4,12 +4,11 @@
 
 <script>
 import { getStore } from "../store";
+console.log(getStore().then((data) => console.log(data)));
+
 export default {
   name: "Delta",
 
-  mounted() {
-    this.message = getStore();
-    console.log(getStore());
-  },
+  mounted() {},
 };
 </script>
